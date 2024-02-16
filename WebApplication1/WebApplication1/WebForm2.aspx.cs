@@ -15,10 +15,11 @@ namespace WebApplication1
             {
                 string nome = Request.Cookies["Dettagli"]["Nome"];
                 string prezzo = Request.Cookies["Dettagli"]["Prezzo"];
+                string descrizione = Request.Cookies["Dettagli"]["Descrizione"];
                 string urlImmagine = Request.Cookies["Dettagli"]["UrlImmagine"];
 
                 // Visualizza il nome e il prezzo come testo
-                DatiProdotti.InnerText = "Nome: " + nome + ", Prezzo: " + prezzo;
+                DatiProdotti.InnerText = "Nome: " + nome + ", Prezzo: " + prezzo + ", Descrizione: " + descrizione;
 
                 // Imposta l'URL dell'immagine
                 imgProdotto.ImageUrl = urlImmagine;

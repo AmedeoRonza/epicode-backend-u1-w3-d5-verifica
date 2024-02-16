@@ -19,6 +19,7 @@
                 <asp:Button ID="Button1" runat="server" Text="Dettagli" OnClick="Dettagli_Click" />
                 <asp:Literal ID="Nome" runat="server" Visible="false" Text='<%# Eval("Nome") %>'></asp:Literal>
                 <asp:Literal ID="Prezzo" runat="server" Visible="false" Text='<%# Eval("Prezzo") %>'></asp:Literal>
+                <asp:Literal ID="Descrizione" runat="server" Visible="false" Text='<%# Eval("Descrizione") %>'></asp:Literal>
                 <asp:Image ID='Image1' runat="server" Visible="false" Text='<%# Eval("UrlImmagine") %>'></asp:Image>
             </div>
         </div>
