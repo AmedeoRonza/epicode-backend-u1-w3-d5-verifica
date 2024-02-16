@@ -14,7 +14,6 @@
             <img class="card-img-top" src='<%# Eval("UrlImmagine") %>' alt="headphones" runat="server" id="UrlImmagine" />
             <div class="card-body">
                 <h5 class="card-title text-black"><%# Eval("Nome") %></h5>
-                <p class="card-text text-black"><%# Eval("Descrizione") %></p>
                 <p class="card-text text-black">€<%# Eval("Prezzo") %></p>
                 <asp:Button ID="Button1" runat="server" Text="Dettagli" OnClick="Dettagli_Click" />
                 <asp:Literal ID="Nome" runat="server" Visible="false" Text='<%# Eval("Nome") %>'></asp:Literal>
@@ -25,13 +24,11 @@
         </div>
     </div>
 </ItemTemplate>
-
-
-
-            <FooterTemplate>
+ <FooterTemplate>
                 </div>
             </FooterTemplate>
         </asp:Repeater>
+            <asp:Button ID="Button2" runat="server" Text="Carrello" OnClick="Button2_Click" />
         </main>
     </body>
     </html>

@@ -11,10 +11,13 @@
     <form id="form1" runat="server">
         <div>
         </div>
-        <asp:Button ID="logout" runat="server" Text="Logout" OnClick="logout_Click" />
+        <asp:Literal ID="MessageLiteral" runat="server"></asp:Literal>
+<asp:Button ID="Button1" runat="server" Text="Aggiungi al carrello" OnClick="Button1_Click" />
+        <asp:Button ID="Button2" runat="server" Text="Torna alla pagina Prodotti" OnClick="Button2_Click" />
     </form>
     <p id="DatiProdotti" runat="server"></p>
     <!-- Qui verranno visualizzati i dettagli del prodotto, incluso l'immagine -->
+    
     <asp:Image ID="imgProdotto" runat="server" />
 </body>
 </html>

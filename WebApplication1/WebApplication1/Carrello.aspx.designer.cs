@@ -7,29 +7,20 @@
 // </generato automaticamente>
 //------------------------------------------------------------------------------
 
-namespace WebApplication3
+namespace WebApplication1
 {
 
 
-    public partial class _Default
+    public partial class Carrello
     {
 
         /// <summary>
-        /// Controllo ProductRepeater.
+        /// Controllo form1.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater ProductRepeater;
-
-        /// <summary>
-        /// Controllo Button2.
-        /// </summary>
-        /// <remarks>
-        /// Campo generato automaticamente.
-        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
     }
 }

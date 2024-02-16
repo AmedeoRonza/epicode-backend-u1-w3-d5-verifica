@@ -9,7 +9,7 @@ namespace WebApplication1
 {
     public partial class WebForm2 : System.Web.UI.Page
     {
-        protected void Page_Load(object sender, EventArgs e)
+        protected void Page_Load(object sender, EventArgs e) // evento all'avvio della pagina che riprende tramite cookie i dettagli del prodotto dalla pagina precedente
         {
             if (Request.Cookies["Dettagli"] != null)
             {
@@ -19,7 +19,7 @@ namespace WebApplication1
                 string urlImmagine = Request.Cookies["Dettagli"]["UrlImmagine"];
 
                 // Visualizza il nome e il prezzo come testo
-                DatiProdotti.InnerText = "Nome: " + nome + ", Prezzo: " + prezzo + ", Descrizione: " + descrizione;
+                DatiProdotti.InnerText = "Nome: " + nome + ", Prezzo: " + prezzo + " Descrizione: " + descrizione;
 
                 // Imposta l'URL dell'immagine
                 imgProdotto.ImageUrl = urlImmagine;
@@ -29,13 +29,19 @@ namespace WebApplication1
                 Response.Redirect("Default.aspx");
             }
         }
-        protected void logout_Click(object sender, EventArgs e)
-        {
-            HttpCookie Dettagli = new HttpCookie("Dettagli");
-            Dettagli.Expires = DateTime.Now.AddDays(-1);
-            Response.Cookies.Add(Dettagli);
+        
 
-            Response.Redirect("Default");
+        protected void Button1_Click(object sender, EventArgs e) // evento button che dovrebbe aggiungere un prodotto al carrello ma che in realtà fa solo apparire la scritta
+        {
+            MessageLiteral.Text = "<p>Prodotto aggiunto al carrello</p>";
+        }
+
+        protected void Button2_Click(object sender, EventArgs e) // evento button per tornare alla pagina prodotti in quanto dopo "aver aggiunto" un prodotto al carrello, facendo indietro dal browser, non torna indietro
+        {
+            HttpCookie ComeBack = new HttpCookie("ComeBack");
+            ComeBack.Expires = DateTime.Now.AddDays(-1);
+            Response.Cookies.Add(ComeBack);
+            Response.Redirect("Default.aspx");
         }
     }
 }

@@ -5,11 +5,11 @@ using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 
-namespace WebApplication3
+namespace WebApplication3                         // nella pagina html non mi fa inserire i commenti
 {
     public partial class _Default : Page
     {
-        public class Prodotto
+        public class Prodotto             // creazione classe
         {
             public int Id { get; set; }
             public string Nome { get; set; }
@@ -18,13 +18,13 @@ namespace WebApplication3
             public string UrlImmagine { get; set; }
         }
 
-        public static class ProductsList
+        public static class ProductsList // creazione classe lista
         {
             public static List<Prodotto> Prodotti { get; private set; }
 
             static ProductsList()
             {
-                Prodotti = new List<Prodotto>
+                Prodotti = new List<Prodotto> // creazione lista
                 {
                     new Prodotto { Id = 1, Nome = "Xiaomi 11", Descrizione = "Beeeeeeeeeeeeello", Prezzo = 100.00m, UrlImmagine = "./Content/Immagini/11.jpg" },
                     new Prodotto { Id = 2, Nome = "Xiaomi 12", Descrizione = "Troppo cool bro", Prezzo = 200.00m, UrlImmagine = "./Content/Immagini/12.jpg" },
@@ -34,7 +34,7 @@ namespace WebApplication3
             }
         }
 
-        protected void Page_Load(object sender, EventArgs e)
+        protected void Page_Load(object sender, EventArgs e)   //evento all'avvio della pagina
         {
             if (!IsPostBack)
             {
@@ -44,7 +44,7 @@ namespace WebApplication3
             }
         }
 
-        protected void Dettagli_Click(object sender, EventArgs e)
+        protected void Dettagli_Click(object sender, EventArgs e)        // evento button che porta tramite cookie alla pagina dettagli prodotto
         {
             Button btn = (Button)sender;
             RepeaterItem item = (RepeaterItem)btn.NamingContainer;
@@ -69,6 +69,16 @@ namespace WebApplication3
             Response.Cookies.Add(Dettagli);
 
             Response.Redirect("WebForm2.aspx");
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)   // evento button che porta alla pagina Carrello
+        {
+            HttpCookie Carrello = new HttpCookie("Carrello");
+            Carrello.Expires = DateTime.Now.AddDays(10);
+
+            Response.Cookies.Add(Carrello);
+
+            Response.Redirect("Carrello.aspx");
         }
     }
 }
